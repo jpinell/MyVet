@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyVet.Web.Data;
 using MyVet.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyVet.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AgendaController : Controller
     {
         private readonly DataContext _context;
